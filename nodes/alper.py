@@ -27,7 +27,7 @@ class Alper:
     def node_function(self, image, civit_ai_model_url, model_name, model_path):
         
         paths = {
-            'checkpoints' : 'mnt/private/models/checkpoints'
+            'checkpoints' : '/mnt/private/models/checkpoints'
         }
         
         model_path = paths[model_path]
