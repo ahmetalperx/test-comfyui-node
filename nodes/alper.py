@@ -4,14 +4,14 @@ class Alper:
     
     @classmethod
     def INPUT_TYPES(cls):
-        
+    
         return {
             
             'required' : {
                 
                 'civit_ai_model_url' : ('STRING', {'multiline' : False, 'default' : 'https://civitai.com/api/download/models/501240'}),
                 'model_name' : ('STRING', {'multiline' : False, 'default' : 'realisticVisionV60B1_v51HyperVAE.safetensors'}),
-                'model_path' : ('STRING', {'multiline' : False, 'default' : 'ComfyUI/models/checkpoints'})
+                'model_path' : (['checkpoints'],)
                 
             }
             
@@ -24,6 +24,12 @@ class Alper:
     CATEGORY = 'Alper Category'
     
     def node_function(self, civit_ai_model_url, model_name, model_path):
+        
+        paths = {
+            'checkpoints' : 'mnt/private/models/checkpoints'
+        }
+        
+        model_path = paths[model_path]
         
         try:
             
