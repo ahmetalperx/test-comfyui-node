@@ -1,4 +1,4 @@
-from .modules.alper import Alper
+from .nodes.alper import Alper
 
 NODE_CLASS_MAPPINGS = {'Alperr' : Alper}
 
