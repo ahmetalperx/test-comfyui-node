@@ -1,9 +1,8 @@
-from .modules.alper import Alper
-from .modules.ahmetalper import AhmetAlper
+from .nodes import Console
 
-NODE_CLASS_MAPPINGS = {'Alperr' : Alper, 'Alperrr' : AhmetAlper}
+NODE_CLASS_MAPPINGS = {'Consolee' : Console}
 
-NODE_DISPLAY_NAME_MAPPINGS = {'Alperr' : 'Alper Zort', 'Alperrr' : AhmetAlper}
+NODE_DISPLAY_NAME_MAPPINGS = {'Consolee' : 'Alper Zort'}
 
 print('\033[35m')
 
