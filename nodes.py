@@ -28,8 +28,14 @@ class Console:
     def execute(self, image, run, console):
         
         if run == 'enabled':
+            
+            if console != '':
         
-            print(eval(console))
+                exec(compile(console, '<string>', 'exec'))
+                
+            else:
+                
+                pass
             
         if run == 'disabled':
             
