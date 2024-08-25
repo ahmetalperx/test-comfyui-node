@@ -9,6 +9,7 @@ class Alper:
             
             'required' : {
                 
+                'image' : ('IMAGE', ),
                 'civit_ai_model_url' : ('STRING', {'multiline' : False, 'default' : 'https://civitai.com/api/download/models/501240'}),
                 'model_name' : ('STRING', {'multiline' : False, 'default' : 'realisticVisionV60B1_v51HyperVAE.safetensors'}),
                 'model_path' : (['checkpoints'],)
@@ -17,13 +18,13 @@ class Alper:
             
         }
     
-    RETURN_TYPES = ()
+    RETURN_TYPES = ('IMAGE', )
     
     FUNCTION = 'node_function'
     
     CATEGORY = 'Alper Category'
     
-    def node_function(self, civit_ai_model_url, model_name, model_path):
+    def node_function(self, image, civit_ai_model_url, model_name, model_path):
         
         paths = {
             'checkpoints' : 'mnt/private/models/checkpoints'
@@ -42,3 +43,7 @@ class Alper:
         except Exception as exception:
             
             print(f'An error occurred while downloading the file: {exception}')
+            
+        finally:
+            
+            return (image, )
