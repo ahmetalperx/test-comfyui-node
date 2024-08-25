@@ -32,6 +32,8 @@ class Alper:
         
         model_path = paths[model_path]
         
+        model_name = f'v1/{model_name}'
+        
         try:
             
             command = ['aria2c', '--console-log-level=error', '-c', '-x', '16', '-s', '16', '-k', '1M', civit_ai_model_url, '-d', model_path, '-o', model_name]
